@@ -1,9 +1,7 @@
 .footer {
-position: absolute;
-bottom: 2.5rem;
-width: calc(100% - 40px);
 color: #999;
 text-align: right;
+margin-bottom: 3rem;
 }
 .success {
 display: none;
@@ -14,10 +12,10 @@ display: none;
   min-height: 100vh;
   max-width: 960px;
   margin: 0 auto;
-  padding: 7.5rem 20px;
+  padding: 2rem 20px;
   box-sizing: border-box;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   flex-flow: column nowrap; }
 .column,
 .columns {
@@ -29,7 +27,7 @@ display: none;
 @media (min-width: 400px) {
   .container {
     width: 85%;
-    padding: 10rem 0;
+    padding: 2rem 0;
  }
 
     .footer {
