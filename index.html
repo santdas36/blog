@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Dits and Dahs - Coming Soon!</title>
+  <meta name="description" content="Life's nothing but dits and dahs, it's all about finding the pause.">
+  <meta name="author" content="santdas36">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="http://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="icon" type="image/png" href="images/cube.webp">  
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="one-third column">
+        <img src="images/cube.webp" />
+      </div>
+      <div class="two-thirds column">
+        <h1>Dits & Dahs</h1>
+        <p>Something good is coming up. Enter your email to get notified when we're done.</p>
+        <form id="subscribe" name="subscribe" data-netlify="netlify">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="example@gmail.com" required />
+        <input type="submit" />
+        </form>
+        <span class="success">You are now subscribed. Have an eye on your inbox for updates.</span>
+      </div>
+    </div>
+    <div class="footer">
+    <hr>
+    Copyright &copy; 2020 <a href="https://santdas.ga">santdas36</a>
+    </div>
+  </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("form").submit(function(e) {
+            e.preventDefault();
+            var $form = $(this);
+            $.post($form.attr("action"), $form.serialize()).then(function() {
+                $('.success').show();
+                $form.reset();
+            });
+        });
+    });
+</script>
+</html>
