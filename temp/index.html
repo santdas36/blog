@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164978597-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-164978597-1');
+    </script>
+    <meta charset="utf-8">
+    <title>Dits and Dahs | Blog by @santdas36</title>
+    <meta name="description" content="Life's nothing but dits and dahs, it's all about finding the pause.">
+    <meta name="author" content="santdas36">
+    <meta name="theme-color" content="#fff">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="css/fontawesome/css/brands.min.css" rel="stylesheet">
+    <link href="css/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <style>
+        .preload {
+            position: fixed;
+            z-index: 99;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 1em 1em rgba(0,0,0,0.5);
+        }
+        
+        .preload img {
+            width: 100px;
+            animation: loading 1.2s infinite ease-in-out;
+        }
+        .preload.loaded{
+        transform: translateX(-40%);
+        transition: all 0.5s 0.5s ease-in;
+        box-shadow: none;
+        }
+        .preload.loaded img {
+        opacity: 0;
+        }
+@keyframes loading {
+  0%, 100% { transform: perspective(200px) rotateY(0) rotateX(0) }
+  25% { transform: perspective(200px) rotateY(180deg) }
+  50% { transform: perspective(200px) rotateY(180deg) rotateX(180deg) }
+  75% { transform: perspective(200px) rotateY(0) rotateX(180deg) }
+}
+        .float-right {
+        transform: translateX(-20px);
+        opacity: 0;
+        }
+        .float-up {
+        transform: translateY(20px);
+        opacity: 0;
+        }
+        @media (max-width: 750px) {
+        .preload {
+        box-shadow: 0 0 1rem 1rem rgba(0,0,0,0.2);
+        }
+        .preload.loaded {
+        transform: translateY(-100%);
+        }
+        .float-right {
+        transform: translateY(20px);
+        opacity: 0;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="preload">
+        <img src="images/favicon.png">
+    </div>
+    <header>
+    		<nav>
+    		<img class="logo" src="images/logo-dark.png"/>
+    		<a href="#" class="nav-toggle"></a>
+    		<ul>
+    			<li><a class="nav-link" href="#">Home</a></li>
+    			<li><a class="nav-link" href="#">About</a></li>
+    			<li><a class="nav-link" href="#">Posts</a></li>
+    			<li><a class="nav-link subscribe" href="#">Subscribe</a></li>
+    		</ul>
+    		</nav>
+    </header>
+    <main>
+        <section id="home">
+            <div class="container">
+            	<div class="hero">
+            	    <span class="hello float-right">Hello again. This is</span>
+                   <h1 class="title float-right">Dits & Dahs</h1>
+                   <p  class="description float-right">Life's nothing but dits and dahs, it's all about finding the pause.
+                   <span class="credit float-right">A blog by <a class="link" href="https://santdas.ga">@santdas36</a></span></p>
+                   <div class="buttons">
+                       <a class="btn btn-primary float-up"href="#">Know More</a>
+                       <a class="btn btn-secondary float-up"href="#">Latest Posts</a>                       
+                   </div>
+            	</div>
+            	<div class="hero-image">
+            	</div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p class="copy">Copyright 2020 | <a class="link" href="http://instagram.com/santdas36">@santdas36</a></p>
+    </footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $(window).on('load', function() {
+            setTimeout(() => {
+                $('.preload').addClass('loaded');
+                setTimeout(() => {
+                    $('.preload').fadeOut();
+                    $('.float-right, .float-up').each(function(i) {
+                        $(this).delay((i + 2) * 150).queue(function(){
+                            $(this).removeClass("float-right");
+                            $(this).removeClass("float-up");
+                            });
+                    });
+                }, 1300);
+            }, 1200);
+        });
+        $(window).on('scroll', function () { 
+            var scroll = $(document).scrollTop();
+                $('.hero-image').css({ 'background-position':'0% '+(0.2*scroll)+'px' }); 
+        });
+        
+        $('.nav-toggle').on('click', function() {
+            var $this = $(this);
+            event.preventDefault();
+            $this.toggleClass('isActive');
+            $('nav ul').toggleClass('isActive');
+        });
+    });
+</script>
+</html>
