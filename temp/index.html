@@ -189,7 +189,6 @@
     </footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
-<script src="jquery.cookie.js"></script>
 <script>
     $(document).ready(function() {
     
@@ -203,10 +202,10 @@
         });
 
         $(window).on('load', function() {
-        		if (!$.cookie('darkMode')) {
-        		    $.cookie('darkMode', 'enabled')
+               if(!localStorage.getItem('darkMode')) {
+        		    localStorage.setItem('darkMode','enabled');
         		}
-        		if ($.cookie('darkMode') == 'enabled') {
+        		if (localStorage.getItem('darkMode') == 'enabled') {
          			$('body').addClass('dark');
            		$('.dark-mode').addClass('active');
     		    }
@@ -258,16 +257,17 @@ $(window).on('scroll', function() {
         $('.dark-mode').on('click', function() {
             var $this = $(this);
             event.preventDefault();
-            if ($.cookie('darkMode') == "disabled") {
+            var DMstat = localStorage.getItem('darkMode');
+            if (DMstat == "disabled") {
        	     $this.addClass('active');
         	     $('body').addClass('dark');
-     	     $.cookie('darkMode', 'enabled');
-     	   } else if ($.cookie('darkMode') == "enabled") {
+     	     localStorage.setItem('darkMode','enabled')
+     	   } else if (DMstat == "enabled") {
        	     $this.removeClass('active');
         	     $('body').removeClass('dark');
-     	     $.cookie('darkMode', 'disabled');
+     	     localStorage.setItem('darkMode','disabled')
      	   }
-            alert($.cookie('darkMode'));
+            alert(localStorage.getItem('darkMode'));
         });
         
         function validateEmail($email) {
