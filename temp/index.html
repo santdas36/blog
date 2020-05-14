@@ -204,7 +204,7 @@
 
         $(window).on('load', function() {
         		var darkMode = Cookies.get('darkMode');
-        		if (darkMode) {
+        		if (darkMode == "enabled") {
          			$('body').addClass('dark');
            		$('.dark-mode').addClass('active');
     		    }
@@ -256,9 +256,15 @@ $(window).on('scroll', function() {
         $('.dark-mode').on('click', function() {
             var $this = $(this);
             event.preventDefault();
-            $this.toggleClass('active');
-            $('body').toggleClass('dark');
-            Cookies.set('darkMode', !Cookies.get("darkMode"));
+            if (Cookies.get("darkMode") == "disabled") {
+       	     $this.addClass('active');
+        	     $('body').addClass('dark');
+     	     Cookies.set('darkMode', 'enabled');
+     	   } else if (Cookies.get("darkMode") == "enabled") {
+       	     $this.removeClass('active');
+        	     $('body').removeClass('dark');
+     	     Cookies.set('darkMode', 'disabled');
+     	   }
             alert(Cookies.get("darkMode"));
         });
         
