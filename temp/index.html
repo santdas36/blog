@@ -203,10 +203,10 @@
         });
 
         $(window).on('load', function() {
-        		if (Cookies.get('darkMode')) var darkMode = Cookies.get('darkMode');
-        		if (darkMode) {
+        		var dark-Mode = Cookies.get('darkMode');
+        		if (dark-Mode) {
          			$('body').addClass('dark');
-           		$('.dark-mode').addClass('dark');
+           		$('.dark-mode').addClass('active');
     		    }
             setTimeout(() => {
                 $('.preload').addClass('loaded');
@@ -259,6 +259,7 @@ $(window).on('scroll', function() {
             $this.toggleClass('active');
             $('body').toggleClass('dark');
             Cookies.set('darkMode', !Cookies.get("darkMode"));
+            alert(Cookies.get("darkMode"));
         });
         
         function validateEmail($email) {
