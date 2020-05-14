@@ -203,8 +203,10 @@
         });
 
         $(window).on('load', function() {
-        		var darkMode = Cookies.get('darkMode');
-        		if (darkMode == "enabled") {
+        		if(!Cookies.get('darkMode')) {
+        		    Cookies.set('darkMode', 'disabled');
+        		} 
+        		if (Cookies.get('darkMode'); == "enabled") {
          			$('body').addClass('dark');
            		$('.dark-mode').addClass('active');
     		    }
