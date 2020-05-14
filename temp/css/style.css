@@ -234,6 +234,8 @@ width: 30px;
 .nav-toggle.isActive {
 background: transparent;
 transition: width 0.3s, background 0.3s;
+width: 30px;
+box-shadow: none !important;
 }
 .nav-toggle.isActive:after {
 top: 0;

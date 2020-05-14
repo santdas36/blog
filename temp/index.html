@@ -40,10 +40,17 @@
             justify-content: center;
             box-shadow: 0 0 1em 1em rgba(0,0,0,0.5);
         }
-        
+         body.dark .preload {
+         background: #1c1c1c;
+         }
+
         .preload img {
             width: 100px;
-            animation: loading 1.2s infinite ease-in-out;
+            height: 100px;
+            border-radius: 50%;
+            animation: loading 0.5s alternate infinite cubic-bezier(.5,0.05,1,.5);
+            transform: translateY(-50px);
+            border: 0.5rem solid #fff;
         }
         .preload.loaded{
         transform: translateX(-40%);
@@ -53,12 +60,10 @@
         .preload.loaded img {
         opacity: 0;
         }
-@keyframes loading {
-  0%, 100% { transform: perspective(200px) rotateY(0) rotateX(0) }
-  25% { transform: perspective(200px) rotateY(180deg) }
-  50% { transform: perspective(200px) rotateY(180deg) rotateX(180deg) }
-  75% { transform: perspective(200px) rotateY(0) rotateX(180deg) }
-}
+        @keyframes loading {
+        from { transform: translateY(-50px); }
+        to { transform: translateY(50px); }
+        }
         .float-right {
         transform: translateX(-20px);
         opacity: 0;
@@ -203,7 +208,7 @@
 
         $(window).on('load', function() {
                if(!localStorage.getItem('darkMode')) {
-        		    localStorage.setItem('darkMode','enabled');
+        		    localStorage.setItem('darkMode','disabled');
         		}
         		if (localStorage.getItem('darkMode') == 'enabled') {
          			$('body').addClass('dark');
@@ -220,7 +225,7 @@
                             });
                     });
                 }, 1300);
-            }, 1200);
+            }, 1000);
         });
 function isInViewport(node) {
   var rect = node.getBoundingClientRect();
@@ -267,7 +272,6 @@ $(window).on('scroll', function() {
         	     $('body').removeClass('dark');
      	     localStorage.setItem('darkMode','disabled')
      	   }
-            alert(localStorage.getItem('darkMode'));
         });
         
         function validateEmail($email) {
