@@ -69,7 +69,10 @@ line-height: 1.5;
 display: inline-block;
 }
 .btn:hover {
-transform: scale(0.95);
+transform: translateY(-3px);
+}
+.btn:focus {
+transform: translateY(-1px);
 }
 .btn-primary {
 background: #333333;

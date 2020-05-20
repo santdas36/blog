@@ -49,7 +49,7 @@
             height: 100px;
             border-radius: 50%;
             animation: loading 0.5s alternate infinite cubic-bezier(.5,0.05,1,.5);
-            transform: translateY(-50px);
+            transform: translateY(-25px);
             border: 0.5rem solid #fff;
         }
         .preload.loaded{
@@ -61,8 +61,8 @@
         opacity: 0;
         }
         @keyframes loading {
-        from { transform: translateY(-50px); }
-        to { transform: translateY(50px); }
+        0% { transform: translateY(-25px) }
+        100% { transform: translateY(25px) }
         }
         .float-right {
         transform: translateX(-20px);
