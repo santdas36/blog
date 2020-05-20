@@ -517,7 +517,7 @@ background: #ffffff;
 .error {
 font-size: 0.75em;
 margin: 0 0 0 0.2rem;
-color: #f08080;
+color: #f08080 !important;
 height: 0;
 overflow: hidden;
 }
