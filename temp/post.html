@@ -18,7 +18,57 @@
   <link rel="stylesheet" href="css/dark.css">
   <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
-
+<style>
+  header{
+    padding: 0;
+  }
+  #post .container {
+    width: calc(100% - 2rem);
+    max-width: 960px;
+    padding: 5rem 1rem;
+  }
+  .postTitle {
+    font-size: 2em;
+    line-height: 1.6;
+    margin: 3rem 2rem;
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    color: #ffffff;
+  }
+  body.dark .postTitle {
+    color: #ffffff !important;
+  }
+  .postContent {
+    font-size: 1.2em;
+    margin: 3rem 0 0 0;
+  }
+  .postImage {
+    background: url(images/p1.jpeg);
+    background-size: 100%;
+    transition: none;
+    height: 100vh;
+    width: calc(100% + 4rem);
+    margin-top: -5rem;
+    margin-left: -2rem;
+    position: relative;
+  }
+  @media (min-width: 550px) {
+    #post .container {
+    width: 100%;
+    padding: 5rem 3rem;
+    }
+     .postImage {
+     width: calc(100% + 10rem);
+     margin-top: -5rem;
+     margin-left: -5rem;
+     }
+     .postTitle {
+     font-size: 2em;
+     margin: 3rem 5rem;
+     }
+  }
+</style>
 <body>
   <header>
     <nav>
@@ -42,8 +92,21 @@
     </nav>
   </header>
   <main>
-    <section id="post">
-      <h2 class="hello">s</h2>
+   <section id="post">
+    <div class="container">
+      <div class="postImage parallax">
+        <h1 class="hello postTitle">Lorep ipsum is not just some random text. It does mean something.</h1>
+      </div>
+      <div class="postContent">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo viverra maecenas accumsan lacus vel facilisis volutpat est. Vel quam elementum pulvinar etiam non. Viverra orci sagittis eu volutpat odio facilisis mauris sit amet. Cursus turpis massa tincidunt dui ut ornare lectus. Praesent tristique magna sit amet purus. Est pellentesque elit ullamcorper dignissim cras tincidunt. In hendrerit gravida rutrum quisque non tellus orci. Pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam. </p>
+        <p>Urna duis convallis convallis tellus id interdum. Nisl suscipit adipiscing bibendum est ultricies integer. Congue quisque egestas diam in arcu cursus. Ut morbi tincidunt augue interdum velit euismod. Non sodales neque sodales ut etiam sit. Enim facilisis gravida neque convallis a cras semper. Orci nulla pellentesque dignissim enim. Porta nibh venenatis cras sed felis eget velit aliquet. Arcu dictum varius duis at. Ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi.</p>
+        <p>Nunc mattis enim ut tellus elementum sagittis. Mauris pharetra et ultrices neque. Enim facilisis gravida neque convallis a cras. Adipiscing elit duis tristique sollicitudin nibh sit amet. Ut morbi tincidunt augue interdum velit euismod in pellentesque massa. Cras adipiscing enim eu turpis egestas. Eu scelerisque felis imperdiet proin fermentum. Vitae tempus quam pellentesque nec nam. Interdum varius sit amet mattis vulputate enim nulla aliquet. Urna et pharetra pharetra massa massa ultricies.</p>
+        <p>Neque convallis a cras semper auctor neque vitae tempus. Non odio euismod lacinia at quis. Ut etiam sit amet nisl purus in. Aenean pharetra magna ac placerat vestibulum. Ac orci phasellus egestas tellus rutrum tellus. Tempor orci dapibus ultrices in iaculis nunc sed augue lacus. Lectus vestibulum mattis ullamcorper velit. In cursus turpis massa tincidunt dui. Dui vivamus arcu felis bibendum ut tristique et egestas. Aliquam id diam maecenas ultricies mi eget mauris pharetra et. Pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies. Sed faucibus turpis in eu mi bibendum neque egestas. Turpis egestas maecenas pharetra convallis posuere morbi. Eget arcu dictum varius duis at consectetur lorem donec.</p>
+        <p>At varius vel pharetra vel. Et magnis dis parturient montes nascetur ridiculus. Eu facilisis sed odio morbi quis commodo odio aenean. Vitae ultricies leo integer malesuada nunc vel. Velit ut tortor pretium viverra suspendisse potenti nullam. Eu volutpat odio facilisis mauris sit. Viverra maecenas accumsan lacus vel facilisis volutpat. Urna neque viverra justo nec ultrices dui sapien. Vitae auctor eu augue ut lectus arcu bibendum at varius. Amet nisl purus in mollis nunc. Blandit massa enim nec dui nunc mattis enim. Tortor at risus viverra adipiscing at in tellus. Scelerisque eu ultrices vitae auctor eu augue. At auctor urna nunc id cursus metus. Ut eu sem integer vitae justo. Fames ac turpis egestas maecenas. Mollis nunc sed id semper risus. Quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Sapien faucibus et molestie ac feugiat sed lectus vestibulum mattis.
+      </p>
+      </div>
+     </div>
     </section>
     <section id="subscribe">
       <div class="container parallax">
