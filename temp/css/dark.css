@@ -110,11 +110,11 @@ body.dark #latest .container {
   background: #1c1c1c;
 }
 body.dark .post {
-  box-shadow: 0 0 0.5rem #181818;
+  box-shadow: 0 0 0.1rem #151515;
   background: #222222;
 }
 body.dark .post:hover {
-  box-shadow: 0 0 1rem #151515;
+  box-shadow: 0 0.25rem 1rem #151515;
 }
 body.dark .post-title {
   color: #ffffff;
