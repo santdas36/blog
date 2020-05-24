@@ -68,7 +68,7 @@ body.dark .dark-mode {
 }
 body.dark .dark-mode.active {
   fill: #ffffff;
-  stroke-width: 6%;
+  stroke-width: 0;
 }
 body.dark nav ul {
   background: #1c1c1c;

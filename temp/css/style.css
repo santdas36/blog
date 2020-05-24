@@ -151,7 +151,7 @@ top: 0;
 }
 nav .logo {
 height: 1.75rem;
-fill: #1c1c1c;
+fill: #1c1c1c;filter: drop-shadow(0 1px 0 #ffffff) drop-shadow(0 -1px 0 #ffffff) drop-shadow(-1px 0 0 #ffffff) drop-shadow(1px 0 0 #ffffff);
 }
 .toggles {
 display: flex;
@@ -160,14 +160,10 @@ align-items: center;
 .dark-mode {
 height: 1.75rem;
 stroke: #1c1c1c;
-stroke-width: 12%;
+stroke-width: 6%;
 fill: #ffffff;
 margin-right: 2rem;
 z-index: 1;
-}
-.dark-mode.active {
-fill: #1c1c1c;
-stroke-width: 6%;
 }
 nav ul {
 list-style-type: none;
@@ -348,7 +344,7 @@ background: #ffffff;
 width: calc(100vw - 2rem);
 }
 .nav-toggle, .nav-toggle:before , .nav-toggle:after {
-box-shadow: 0 0 0 0.1rem #ffffff;
+box-shadow: 0 0 0 1px #ffffff;
 }
 }
 
