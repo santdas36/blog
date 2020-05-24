@@ -100,6 +100,7 @@
        $(window).on('scroll', function() {
          var scrolled = $(window).scrollTop();
          $('.parallax').each(function(index, element) {
+           var parallaxText = $(this).find('.postTitle');
            var initY = $(this).offset().top;
            var height = $(this).height();
            var endY = initY + $(this).height();
@@ -108,6 +109,7 @@
              var diff = scrolled - initY;
              var ratio = Math.round((diff / height) * 100);
              $(this).css('background-position', '0 ' + (ratio * 1.5) + 'px');
+             parallaxText.css('bottom', (ratio) + 'px');
            }
          })
        }) 

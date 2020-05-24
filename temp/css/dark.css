@@ -61,10 +61,7 @@ body.dark header nav {
 }
 body.dark nav .logo {
   fill: #ffffff;
-}
-body.dark .dark-mode {
-  stroke: #ffffff;
-  fill: #1c1c1c;
+  filter: drop-shadow(0 1px 0 #1c1c1c) drop-shadow(0 -1px 0 #1c1c1c) drop-shadow(-1px 0 0 #1c1c1c) drop-shadow(1px 0 0 #1c1c1c);
 }
 body.dark .dark-mode.active {
   fill: #ffffff;
