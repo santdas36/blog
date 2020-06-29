@@ -1,5 +1,5 @@
     $(document).ready(function() {
-    
+    alert($('.postContent').width());
         $('.nav-toggle').on('click', function() {
             var $this = $(this);
             event.preventDefault();

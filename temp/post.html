@@ -23,15 +23,13 @@
     padding: 0;
   }
   #post .container {
-    width: calc(100% - 2rem);
-    max-width: 960px;
-    padding: 5rem 1rem;
+    width: 100%;
   }
   .postTitle {
     font-size: 2em;
     font-weight: 900;
     line-height: 1.6;
-    margin: 3rem 2rem;
+    margin: 2rem;
     z-index: 1;
     position: absolute;
     bottom: 0;
@@ -43,31 +41,37 @@
   }
   .postContent {
     font-size: 1.2em;
-    margin: 3rem 0 0 0;
+    padding: 2rem;
+    max-width: 720px;
+    margin: 0 auto;
   }
   .postImage {
     background: url(images/p1.jpeg);
-    background-size: 100%;
+    background-size: cover;
     transition: none;
     height: 100vh;
-    width: calc(100% + 4rem);
-    margin-top: -5rem;
-    margin-left: -2rem;
+    width: 100%;
     position: relative;
   }
-  @media (min-width: 550px) {
-    #post .container {
-    width: 100%;
-    padding: 5rem 3rem;
+  @media (min-width: 400px) {
+   .postContent {
+    padding: 3rem;
     }
-     .postImage {
-     width: calc(100% + 10rem);
-     margin-top: -5rem;
-     margin-left: -5rem;
-     }
+    .postImage {
+    width: 100%;
+    }
      .postTitle {
      font-size: 2em;
-     margin: 3rem 5rem;
+     margin: 3rem;
+     }
+  }
+  
+  @media (min-width: 816px) {
+  .postTitle {
+     left: 50%;
+     transform:translateX(-50%);
+     width: 720px;
+     margin: 3rem 0;
      }
   }
 </style>
