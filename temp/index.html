@@ -200,18 +200,18 @@ ga('send', 'pageview');
 <script src="script.js"></script>
 <script>
 $(window).on('load', function() {
-  setTimeout(() => {
+ // setTimeout(() => {
   $('.preload').addClass('loaded');
-  setTimeout(() => {
+//  setTimeout(() => {
   $('.preload').fadeOut();
   $('.float-right, .float-up').each(function(i) {
-  $(this).delay((i + 2) * 150).queue(function(){
+//  $(this).delay((i + 2) * 150).queue(function(){
   $(this).removeClass("float-right");
   $(this).removeClass("float-up");
+//  });
   });
-  });
-  }, 1300);
-  }, 1000);
+//  }, 1300);
+//  }, 1000);
 })
 </script>
 </body>
